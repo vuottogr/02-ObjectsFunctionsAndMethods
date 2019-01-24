@@ -16,11 +16,15 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
 #     then select  Mark Directory As  ~  Sources Root.
 #
 ###############################################################################
-
+import math as math
 import rosegraphics as rg
 
 
 def main():
+    ans = righttriangle(3,4)
+    print(ans)
+    turtles('blue', 5)
+    turtles('red',7)
     """
     TESTS the functions that you will write below.
     You write the tests per the _TODO_s below.
@@ -28,7 +32,7 @@ def main():
 
 
 ###############################################################################
-# TODO: 3a.  Define a function immediately below this _TODO_.
+# done: 3a.  Define a function immediately below this _TODO_.
 #   It takes two arguments that denote, for a right triangle,
 #   the lengths of the two sides adjacent to its right angle,
 #   and it returns the length of the hypotenuse of that triangle.
@@ -36,15 +40,16 @@ def main():
 #
 #   You may name the function and its parameters whatever you wish.
 #
-# TODO: 3b.  In main, CALL your function and print the returned value,
+# done: 3b.  In main, CALL your function and print the returned value,
 #   to test whether you defined the function correctly.
 #
 ###############################################################################
-
-a = sqrt(x ** (2) + y ** (2))
+def righttriangle (a,b):
+    c = math.sqrt((a ** 2)+(b ** 2))
+    return c
 
 ###############################################################################
-# TODO: 4a.  Define a function immediately below this _TODO_.
+# done: 4a.  Define a function immediately below this _TODO_.
 #   It takes two arguments:
 #     -- a string that represents a color (e.g. 'red')
 #     -- a positive integer that represents the thickness of a Pen.
@@ -66,14 +71,28 @@ a = sqrt(x ** (2) + y ** (2))
 #
 #   You may name the function and its parameters whatever you wish.
 #
-# TODO: 4b.  In main, CALL your function at least TWICE (with different values
+# done: 4b.  In main, CALL your function at least TWICE (with different values
 #   for the arguments) to test whether you defined the function correctly.
 #
 ###############################################################################
 
 
+window = rg.TurtleWindow()
+
+
+def turtles(c, d):
+
+    one = rg.SimpleTurtle()
+    one.pen = rg.Pen('Green', d)
+    two = rg.SimpleTurtle()
+    two.pen = rg.Pen(c, 5)
+    one.forward(100)
+    two.backward(100)
+    window.close_on_mouse_click()
+    return
+
 ###############################################################################
-# TODO: 5.
+# done: 5.
 #   COMMIT-and-PUSH your work (after changing this TO-DO to DONE).
 #
 #   As a reminder, here is how you should do so:
